@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
 <meta charset="UTF-8">
-<title>ETS2 & OMSI 2 Kezdőknek Tutorial</title>
+<title>ETS2 & OMSI 2 Kezdőknek</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -14,7 +14,6 @@ body {
 }
 
 header {
-  background: #020617;
   border-bottom: 1px solid #334155;
   padding: 1rem 2rem;
   display: flex;
@@ -50,27 +49,21 @@ section.active { display: block; }
   padding: 1.5rem;
   border-radius: 12px;
   margin-bottom: 1.5rem;
+  max-width: 350px;
 }
 
 img {
   width: 100%;
+  height: 220px;
+  object-fit: cover;
   border-radius: 10px;
   margin-top: 1rem;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-td, th {
-  padding: 0.7rem;
-  border-bottom: 1px solid #334155;
-  text-align: left;
-}
-
-th {
-  color: #38bdf8;
+a {
+  color: #a855f7;
+  font-weight: bold;
+  text-decoration: none;
 }
 </style>
 </head>
@@ -84,192 +77,63 @@ th {
     <button onclick="tab('gallery')">Képek</button>
     <button onclick="tab('spec')">Gépigény</button>
     <button onclick="tab('controls')">Hogyan kezdjem?</button>
-    <button onclick="tab('mods')">ETS2&OMSI2 Modok Linkei</button>
+    <button onclick="tab('mods')">Modok</button>
   </nav>
 </header>
 
 <main>
 
-<!-- FŐOLDAL -->
 <section id="home" class="active">
   <div class="card">
     <h3>ETS2 & OMSI 2</h3>
-    <p>Kamion- és buszszimulátor játékok+kedvenc modaim kezdőknek és haladóknak.</p>
+    <p>Kezdőknek szóló útmutató és modok.</p>
   </div>
 </section>
-
-<!-- KÉPEK -->
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.card {
-  background: #1e293b;
-  padding: 1rem;
-  border-radius: 10px;
-  width: 300px;
-}
-
-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-</style>
-</head>
-
-<body>
 
 <section id="gallery">
-
   <div class="card">
     <h3>ETS2</h3>
-    <img src="kamion.jpg" alt="ETS2 kamion">
+    <img src="kamion.jpg">
   </div>
-
   <div class="card">
     <h3>OMSI 2</h3>
-    <img src="bus.jpg" alt="OMSI 2 busz">
+    <img src="bus.jpg">
   </div>
-
-  <div class="card">
-    <h3>OMSI 2</h3>
-    <img src="OMSI2.jpg" alt="OMSI 2 Magyar Busz">
-   </div>
-
 </section>
 
-
-</body>
-</html>
-
-<!-- GÉPIGÉNY -->
 <section id="spec">
   <div class="card">
-    <h3>Gépigény összehasonlítás</h3>
-    <table>
-      <tr>
-        <th></th>
-        <th>ETS2</th>
-        <th>OMSI 2</th>
-      </tr>
-      <tr>
-        <td>Processzor</td>
-        <td>Intel i5 / Ryzen 5</td>
-        <td>Intel i5 (erős mag)</td>
-      </tr>
-      <tr>
-        <td>RAM</td>
-        <td>8 GB</td>
-        <td>16 GB ajánlott</td>
-      </tr>
-      <tr>
-        <td>Videókártya</td>
-        <td>GTX 1060</td>
-        <td>GTX 970</td>
-      </tr>
-      <tr>
-        <td>Tárhely</td>
-        <td>25 GB</td>
-        <td>30 GB+</td>
-      </tr>
-    </table>
+    <h3>Gépigény</h3>
+    <p>ETS2: 8GB RAM<br>OMSI2: 16GB ajánlott</p>
   </div>
 </section>
 
-<!-- VEZÉRLÉS -->
 <section id="controls">
   <div class="card">
-    <h3>ETS2 – Hogyan kezdjem?</h3>
-    <ul>
-      <li>🎮 Kormány: Logitech G29 / G920 ajánlott</li>
-      <li>⌨️ Billentyűzet + egér is jó kezdésnek</li>
-      <li>⚙️ Beállítások → Controls → Steering Wheel</li>
-      <li>🛣️ Automata váltó ajánlott kezdőknek</li>
-    </ul>
+    <h3>Hogyan kezdjem?</h3>
+    <p>Kormány vagy billentyűzet, tutorial ajánlott.</p>
   </div>
-<!-- Hogyan kezdjem? -->
+</section>
+
+<section id="mods">
   <div class="card">
-    <h3>OMSI 2 – Hogyan kezdjem?</h3>
-    <ul>
-      <li>⌨️ Billentyűzet KÖTELEZŐ az elején</li>
-      <li>🚌 Sok gomb: ajtók, indítás, váltó</li>
-      <li>🎮 Kormány használható, de bonyolultabb</li>
-      <li>📘 Tutorial pálya ajánlott</li>
-    </ul>
-  </div>
-
-<!-- ETS2&OMSI2 Modok Linkei -->
-  <div class="card">
-    <h3>OMSI2 Map Modok</h3>
-    <ul>
-<style>
-    body {
-      background: #0b0f1a;
-      font-family: Arial, sans-serif;
-      color: white;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 1rem;
-      border-radius: 10px;
-      width: 320px;
-    }
-
-    img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    a {
-      color: #a855f7;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-
-<body>
-
-  <h2>ETS2 & OMSI2 Modok Linkei</h2>
-
-  <div class="card">
-    <h3>OMSI2 Map Modok</h3>
-
-    <img src="24939budapest-delpest.jpg" alt="Délpest">
-
+    <h3>OMSI2 – Délpest</h3>
+    <img src="24939budapest-delpest.jpg">
     <a href="https://mods.club/omsi2-mods/omsi-2-budapest-delpest-map-v3-3/" target="_blank">
-      🚍 A Mod Link megnyitása
+      🚍 Mod megnyitása
     </a>
   </div>
-
-</body>
-</html>
-
-<body>
-
-<img src="24939budapest-delpest.jpg" alt=Délpest">
-<a href="https://mods.club/omsi2-mods/omsi-2-budapest-delpest-map-v3-3/">A Mod Link megnyitása</a>
 </section>
 
 </main>
 
 <script>
 function tab(id) {
-  document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
-  event.target.classList.add("active");
-
   document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
+
+  document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+  event.target.classList.add("active");
 }
 </script>
 
