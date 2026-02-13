@@ -6,48 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  /* 📱 MOBIL NÉZET */
-@media (max-width: 768px) {
-
-  header {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  nav button {
-    margin: 0;
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  main {
-    padding: 1rem;
-  }
-
-  .card {
-    max-width: 100%;
-  }
-
-  img {
-    height: 180px;
-  }
-
-  table {
-    font-size: 0.9rem;
-  }
-
-  th, td {
-    padding: 0.5rem;
-  }
-}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -92,22 +50,40 @@ section.active { display: block; }
   padding: 1.5rem;
   border-radius: 12px;
   margin-bottom: 1.5rem;
-} 
-  img {
-  border: 2px solid #38bdf8;
-  border-radius: 12px;
-  transition: 0.3s;
 }
 
-img:hover {
+/* KÉP STÍLUS */
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #38bdf8;
+  transition: 0.3s;
+  margin-top: 1rem;
+}
+
+.card img:hover {
   transform: scale(1.03);
   box-shadow: 0 0 20px #38bdf8;
 }
 
-img {
-  width: 100%;
-  border-radius: 10px;
+/* MOD GOMB */
+.mod-btn {
+  display: inline-block;
+  background: #38bdf8;
+  color: #020617;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
   margin-top: 1rem;
+}
+
+.mod-btn:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
 }
 
 table {
@@ -124,141 +100,100 @@ td, th {
 th {
   color: #38bdf8;
 }
+
+/* MOBIL */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  nav button {
+    margin: 0;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .card img {
+    height: 180px;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h2>Szimulátor bemutató kezdőknek,haladóknak</h2>
+  <h2>Szimulátor bemutató kezdőknek, haladóknak</h2>
   <nav>
-    <button class="active" onclick="tab('home')">Főoldal</button>
-    <button onclick="tab('gallery')">Képek</button>
-    <button onclick="tab('spec')">Gépigény</button>
-    <button onclick="tab('controls')">Hogyan kezdjem?</button> 
-    <button onclick="tab('mods')">Modok</button>
-    
+    <button class="active" onclick="tab(event,'home')">Főoldal</button>
+    <button onclick="tab(event,'gallery')">Képek</button>
+    <button onclick="tab(event,'spec')">Gépigény</button>
+    <button onclick="tab(event,'controls')">Hogyan kezdjem?</button>
+    <button onclick="tab(event,'mods')">Modok</button>
   </nav>
 </header>
 
 <main>
 
-<!-- FŐOLDAL -->
 <section id="home" class="active">
   <div class="card">
     <h3>ETS2 & OMSI 2</h3>
-    <p>Kamion- és buszszimulátor játékok kezdőknek és haladóknak.Akár kezdő</br> akár haladó itt segitek.</p>
+    <p>Kamion- és buszszimulátor játékok kezdőknek és haladóknak. Akár kezdő, akár haladó, itt segítek.</p>
   </div>
 </section>
 
-<!-- KÉPEK --!>
-  <p>A Képek illusztrációk. </p>
-  <img src="Kamion.jpg" alt="Euro Truck Simulator 2">
-  <img src="bus.jpg" alt="OMSI2">
+<section id="gallery">
+  <div class="card">
+    <h3>Képek</h3>
+    <p>A képek illusztrációk.</p>
+    <img src="Kamion.jpg" alt="Euro Truck Simulator 2">
+    <img src="bus.jpg" alt="OMSI 2">
+  </div>
+</section>
 
-<!-- GÉPIGÉNY -->
-<section id="spec" class="active">
+<section id="spec">
   <div class="card">
     <h3>Euro Truck Simulator 2 – Gépigény</h3>
     <table>
-      <tr>
-        <th>Komponens</th>
-        <th>Minimum</th>
-        <th>Ajánlott</th>
-      </tr>
-      <tr>
-        <td>Operációs rendszer</td>
-        <td>Windows 10 64-bit</td>
-        <td>Windows 10 / 11 64-bit</td>
-      </tr>
-      <tr>
-        <td>Processzor</td>
-        <td>Intel i5 / Ryzen 5 (4 mag)</td>
-        <td>Intel i7 / Ryzen 7</td>
-      </tr>
-      <tr>
-        <td>Memória (RAM)</td>
-        <td>8 GB</td>
-        <td>16 GB</td>
-      </tr>
-      <tr>
-        <td>Videókártya</td>
-        <td>GTX 1060 / RX 580</td>
-        <td>RTX 2060 / RX 6600</td>
-      </tr>
-      <tr>
-        <td>Tárhely</td>
-        <td>25 GB HDD</td>
-        <td>25 GB SSD</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h3>OMSI 2 – Gépigény</h3>
-    <table>
-      <tr>
-        <th>Komponens</th>
-        <th>Minimum</th>
-        <th>Ajánlott</th>
-      </tr>
-      <tr>
-        <td>Operációs rendszer</td>
-        <td>Windows 10 64-bit</td>
-        <td>Windows 10 / 11 64-bit</td>
-      </tr>
-      <tr>
-        <td>Processzor</td>
-        <td>Intel i5 (erős egy szál)</td>
-        <td>Intel i7 / Ryzen 7 (magas órajel)</td>
-      </tr>
-      <tr>
-        <td>Memória (RAM)</td>
-        <td>8 GB (nem ajánlott)</td>
-        <td>16 GB (erősen ajánlott)</td>
-      </tr>
-      <tr>
-        <td>Videókártya</td>
-        <td>GTX 970</td>
-        <td>GTX 1660 / RTX 2060</td>
-      </tr>
-      <tr>
-        <td>Tárhely</td>
-        <td>30 GB HDD</td>
-        <td>30 GB SSD</td>
-      </tr>
+      <tr><th>Komponens</th><th>Minimum</th><th>Ajánlott</th></tr>
+      <tr><td>Operációs rendszer</td><td>Windows 10 64-bit</td><td>Windows 10 / 11 64-bit</td></tr>
+      <tr><td>Processzor</td><td>Intel i5 / Ryzen 5</td><td>Intel i7 / Ryzen 7</td></tr>
+      <tr><td>Memória</td><td>8 GB</td><td>16 GB</td></tr>
+      <tr><td>Videókártya</td><td>GTX 1060 / RX 580</td><td>RTX 2060 / RX 6600</td></tr>
+      <tr><td>Tárhely</td><td>25 GB HDD</td><td>25 GB SSD</td></tr>
     </table>
   </div>
 </section>
 
-<!-- VEZÉRLÉS -->
 <section id="controls">
   <div class="card">
-    <h3>ETS2 – Hogyan kezdjem?</h3>
+    <h3>Hogyan kezdjem?</h3>
     <ul>
-      <li>🎮 Kormány: Logitech G29 / G920 ajánlott</li>
-      <li>⌨️ Billentyűzet + egér is jó kezdésnek</li>
-      <li>⚙️ Beállítások → Controls → Steering Wheel</li>
-      <li>🛣️ Automata váltó ajánlott kezdőknek</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>OMSI 2 – Hogyan kezdjem?</h3>
-    <ul>
-      <li>⌨️ Billentyűzet KÖTELEZŐ az elején ha jót akarsz magadnak.</li>
-      <li>🚌 Sok gomb: ajtók, indítás, váltó</li>
-      <li>🎮 Kormány használható, de bonyolultabb</li>
+      <li>🎮 Kormány ajánlott</li>
+      <li>⌨️ Billentyűzet is jó kezdésnek</li>
+      <li>⚙️ Automata váltó kezdőknek</li>
       <li>📘 Tutorial pálya ajánlott</li>
     </ul>
   </div>
-  <-- MODOK -->
+</section>
+
 <section id="mods">
-  <div class="card mod-card">
+  <div class="card">
     <h3>Nova Hungary Map</h3>
-
-    <img src="/nova-hungary-map.jpg" alt="Nova Hungary Map">
-
+    <img src="nova-hungary-map.jpg" alt="Nova Hungary Map">
     <a class="mod-btn"
        href="https://sharemods.com/rhi4yuqslg4i/Novamap_Hungary_2.5.3_157.scs.html"
        target="_blank">
@@ -266,45 +201,11 @@ th {
     </a>
   </div>
 </section>
-<style.mod-card {
-  text-align: center;
-}
-
-.mod-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid #38bdf8;
-  box-shadow: 0 0 15px rgba(56,189,248,0.6);
-  margin-bottom: 1rem;
-  transition: 0.3s;
-}
-
-.mod-card img:hover {
-  transform: scale(1.03);
-}
-
-.mod-btn {
-  display: inline-block;
-  background: #38bdf8;
-  color: #020617;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.mod-btn:hover {
-  background: #0ea5e9;
-  transform: scale(1.05);}
-  </style>
 
 </main>
 
 <script>
-function tab(id) {
+function tab(event,id) {
   document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
   event.target.classList.add("active");
 
@@ -315,6 +216,10 @@ function tab(id) {
 
 </body>
 </html>
+
+
+      
+
 
 
 
