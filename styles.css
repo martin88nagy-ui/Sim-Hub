@@ -1,0 +1,359 @@
+﻿:root {
+  --bg: #f2f3ee;
+  --card: #ffffff;
+  --ink: #1e232b;
+  --muted: #5a6675;
+  --line: #d7dde6;
+  --accent: #d85a1a;
+  --accent-dark: #9d3f13;
+  --hero-a: #1f2a38;
+  --hero-b: #34465d;
+  --ets2: #2f6fa8;
+  --ets2-deep: #173753;
+  --ats: #a45c2f;
+  --ats-deep: #4a2b17;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(115deg, rgba(47, 111, 168, 0.16) 0%, rgba(47, 111, 168, 0.08) 50%, transparent 50%),
+    linear-gradient(295deg, rgba(164, 92, 47, 0.18) 0%, rgba(164, 92, 47, 0.08) 52%, transparent 52%),
+    var(--bg);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.hero {
+  background:
+    linear-gradient(120deg, rgba(23, 55, 83, 0.95), rgba(47, 111, 168, 0.86) 48%, rgba(164, 92, 47, 0.78) 100%),
+    linear-gradient(300deg, var(--ats-deep), var(--hero-b));
+  color: #f8fbff;
+  padding-bottom: 2rem;
+}
+
+.topbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a,
+.dropdown-toggle {
+  color: #ecf2ff;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.45rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.dropdown-toggle-ets2 {
+  border-color: rgba(117, 188, 255, 0.45);
+  background: rgba(53, 129, 197, 0.24);
+}
+
+.dropdown-toggle-ats {
+  border-color: rgba(255, 184, 132, 0.45);
+  background: rgba(186, 110, 62, 0.24);
+}
+
+.menu a:hover,
+.dropdown-toggle:hover,
+.menu a:focus-visible,
+.dropdown-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  outline: none;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  min-width: 220px;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.16);
+  margin: 0;
+  padding: 0.35rem;
+  display: none;
+  z-index: 5;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  color: var(--ink);
+  display: block;
+  border-radius: 0.35rem;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+  background: #f1f5fb;
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+.hero-content h1 {
+  margin: 0.2rem 0 0.5rem;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.hero-content p {
+  max-width: 700px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0.85;
+  font-size: 0.82rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 0.7rem;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background: var(--accent-dark);
+}
+
+.cta-ets2 {
+  background: var(--ets2);
+}
+
+.cta-ets2:hover,
+.cta-ets2:focus-visible {
+  background: var(--ets2-deep);
+}
+
+.cta-ats {
+  background: var(--ats);
+}
+
+.cta-ats:hover,
+.cta-ats:focus-visible {
+  background: var(--ats-deep);
+}
+
+.portal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.landing-main {
+  grid-template-columns: 1fr;
+}
+
+.game-card,
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+.game-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.game-card-ets2 {
+  border-left: 6px solid var(--ets2);
+  background: linear-gradient(90deg, rgba(47, 111, 168, 0.12), #ffffff 36%);
+}
+
+.game-card-ats {
+  border-left: 6px solid var(--ats);
+  background: linear-gradient(90deg, rgba(164, 92, 47, 0.13), #ffffff 36%);
+}
+
+.game-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.6rem;
+  border: 1px solid #d5dbe4;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.spec-grid article {
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 0.8rem;
+  background: #fcfdff;
+}
+
+.spec-grid ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.note {
+  margin-top: 0.8rem;
+  color: var(--muted);
+}
+
+.settings {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+
+select,
+button {
+  border: 1px solid #cfd7e2;
+  border-radius: 0.5rem;
+  padding: 0.55rem;
+  font: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover,
+button:focus-visible {
+  background: var(--accent-dark);
+}
+
+.status {
+  margin-top: 0.8rem;
+  border-left: 4px solid var(--accent);
+  background: #fff6ef;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.3rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+}
+
+.theme-ets2 {
+  background:
+    linear-gradient(115deg, rgba(47, 111, 168, 0.22) 0%, rgba(47, 111, 168, 0.1) 50%, transparent 50%),
+    var(--bg);
+}
+
+.theme-ets2 .hero {
+  background: linear-gradient(130deg, var(--ets2-deep), var(--ets2));
+}
+
+.theme-ats {
+  background:
+    linear-gradient(295deg, rgba(164, 92, 47, 0.24) 0%, rgba(164, 92, 47, 0.1) 52%, transparent 52%),
+    var(--bg);
+}
+
+.theme-ats .hero {
+  background: linear-gradient(130deg, var(--ats-deep), var(--ats));
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+  }
+
+  .game-card {
+    grid-template-columns: 1fr;
+  }
+
+  .settings,
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
