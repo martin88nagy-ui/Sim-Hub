@@ -1,0 +1,126 @@
+﻿<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ETS2 & ATS Információs Oldal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar">
+      <a class="brand" href="#bevezeto">Truck Sim Hub</a>
+      <ul class="menu">
+        <li><a href="#bevezeto">Kezdőlap</a></li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" aria-expanded="false" aria-controls="games-menu">Játékok</button>
+          <ul id="games-menu" class="dropdown-menu">
+            <li><a href="#ets2">Euro Truck Simulator 2</a></li>
+            <li><a href="#ats">American Truck Simulator</a></li>
+          </ul>
+        </li>
+        <li><a href="#gepigeny">Gépigény</a></li>
+        <li><a href="#beallitasok">Beállítások</a></li>
+      </ul>
+    </nav>
+
+    <section id="bevezeto" class="hero-content">
+      <p class="eyebrow">Bevezető</p>
+      <h1>ETS2 és ATS egy helyen</h1>
+      <p>
+        Ez az oldal gyors áttekintést ad az ETS2 és ATS játékokról: rövid bemutató,
+        gépigény, képes blokkok és ajánlott beállítások kezdőknek.
+      </p>
+      <a class="cta" href="#gepigeny">Ugrás a gépigényhez</a>
+    </section>
+  </header>
+
+  <main>
+    <section id="ets2" class="game-card">
+      <img src="images/ets2.svg" alt="ETS2 illusztráció" />
+      <div>
+        <h2>Euro Truck Simulator 2</h2>
+        <p>
+          Európai fuvarozás, részletes térkép és nyugodt, hosszú távú vezetési élmény.
+          Ideális, ha szereted a valósághű közlekedést és a fokozatos fejlődést.
+        </p>
+      </div>
+    </section>
+
+    <section id="ats" class="game-card">
+      <img src="images/ats.svg" alt="ATS illusztráció" />
+      <div>
+        <h2>American Truck Simulator</h2>
+        <p>
+          Amerikai autópályák, monumentális tájak és klasszikus kamionhangulat.
+          Erős atmoszféra és változatos útvonalak nyugati államoktól a sivatagokig.
+        </p>
+      </div>
+    </section>
+
+    <section id="gepigeny" class="panel">
+      <h2>Ajánlott gépigény (általános)</h2>
+      <div class="spec-grid">
+        <article>
+          <h3>Minimum</h3>
+          <ul>
+            <li>CPU: 4 magos processzor</li>
+            <li>RAM: 8 GB</li>
+            <li>GPU: 2-4 GB VRAM</li>
+            <li>Tárhely: 25+ GB szabad hely</li>
+            <li>OS: 64 bites Windows</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Ajánlott</h3>
+          <ul>
+            <li>CPU: 6 magos modern processzor</li>
+            <li>RAM: 16 GB</li>
+            <li>GPU: 6-8 GB VRAM</li>
+            <li>SSD tárhely</li>
+            <li>Full HD / magas grafika</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note">Megjegyzés: modok és forgalom-bővítők jelentősen növelhetik az erőforrás-igényt.</p>
+    </section>
+
+    <section id="beallitasok" class="panel">
+      <h2>Alállapot és beállítások</h2>
+      <div class="settings">
+        <label>
+          Játék kiválasztása
+          <select id="gameSelect">
+            <option value="ets2">ETS2</option>
+            <option value="ats">ATS</option>
+          </select>
+        </label>
+
+        <label>
+          Minőségi profil
+          <select id="qualitySelect">
+            <option value="performance">Teljesítmény</option>
+            <option value="balanced" selected>Kiegyensúlyozott</option>
+            <option value="quality">Látvány</option>
+          </select>
+        </label>
+
+        <button id="applyBtn" type="button">Beállítás alkalmazása</button>
+      </div>
+
+      <div class="status" id="statusBox" aria-live="polite">
+        Aktuális állapot: ETS2 + Kiegyensúlyozott profil.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Készítve ETS2 / ATS rajongóknak.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
