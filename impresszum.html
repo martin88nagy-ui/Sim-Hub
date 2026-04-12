@@ -1,0 +1,115 @@
+﻿<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impresszum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="landing-page">
+  <header class="hero hero-mixed">
+    <nav class="topbar">
+      <div class="topbar-header">
+        <a class="brand" href="index.html">Sim Hub</a>
+        <button type="button" class="search-toggle" aria-expanded="false" aria-controls="site-search" aria-label="KeresĹ‘ megnyitĂˇsa">âŚ•</button>
+        <form class="nav-search" action="#" role="search">
+          <label class="sr-only" for="site-search">KeresĂ©s</label>
+          <input id="site-search" type="search" placeholder="KeresĂ©s..." />
+          <button type="submit" class="search-button">Mehet</button>
+        </form>
+        <button type="button" class="search-cancel">MĂ©gsem</button>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">FĹ‘oldal</a></li>
+        <li><a class="menu-link-ets2" href="jatekvalaszto1.html">VezetĹ‘s sim.</a></li>
+        <li><a class="menu-link-pcbs2" href="jatekvalaszto2.html">EgyĂ©b sim.</a></li>
+      </ul>
+    </nav>
+    <section class="hero-content">
+      <p class="eyebrow">Impresszum</p>
+      <h1>Impresszum</h1>
+      <p>Itt lehet feltĂĽntetni az oldal kĂ©szĂ­tĹ‘jĂ©t, elĂ©rhetĹ‘sĂ©gĂ©t Ă©s az alapvetĹ‘ kiadĂłi informĂˇciĂłkat.</p>
+    </section>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>OldalinformĂˇciĂłk</h2>
+      <p>Oldal neve: Sim Hub</p>
+      <p>TĂ©ma: SzimulĂˇtoros jĂˇtĂ©kok gyĹ±jtĹ‘- Ă©s bemutatĂłoldala</p>
+      <p>Kapcsolat: martin88.nagy@gmail.com</p>
+    </section>
+
+    <section class="panel">
+      <h2>Az oldal cĂ©lja</h2>
+      <p>A Sim Hub cĂ©lja, hogy egy helyen gyĹ±jtse Ă¶ssze a kĂĽlĂ¶nbĂ¶zĹ‘ szimulĂˇtoros jĂˇtĂ©kokat, Ă©s kĂ¶nnyen ĂˇtlĂˇthatĂł mĂłdon mutassa be a vezetĹ‘s, kreatĂ­v, menedzsmentes Ă©s egyĂ©b szimulĂˇtorokat.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Tartalmi jelleg</h2>
+      <p>Az oldalon megjelenĹ‘ informĂˇciĂłk rajongĂłi Ă©s tĂˇjĂ©koztatĂł cĂ©lbĂłl kĂ©szĂĽlnek. A leĂ­rĂˇsok segĂ­tenek eligazodni a jĂˇtĂ©kok kĂ¶zĂ¶tt, de nem minĹ‘sĂĽlnek hivatalos kiadĂłi vagy fejlesztĹ‘i kĂ¶zlemĂ©nynek.</p>
+    </section>
+
+    <section class="panel">
+      <h2>FrissĂ­tĂ©s</h2>
+      <p>Az impresszum oldalt Ă©s a kapcsolĂłdĂł tĂˇjĂ©koztatĂłkat az oldal fejlĹ‘dĂ©sĂ©vel egyĂĽtt lehet bĹ‘vĂ­teni, pontosĂ­tani Ă©s naprakĂ©szen tartani.</p>
+    </section>
+  </main>
+
+  <section class="panel auth-panel">
+    <h2>Bejelentkezés / Regisztráció</h2>
+    <div class="auth-status-card" id="auth-status-card">
+      <div class="auth-avatar" id="auth-avatar">-</div>
+      <p class="auth-status" id="auth-status">Jelenleg nincs bejelentkezett profil.</p>
+    </div>
+    <div class="spec-grid">
+      <form class="trip-log-form auth-form" id="register-form" action="#">
+        <h3>Regisztráció</h3>
+        <div class="trip-log-grid">
+          <label>
+            <span>Felhasználónév</span>
+            <input id="register-username" type="text" placeholder="Pl. SimHubJatekos" />
+          </label>
+          <label>
+            <span>Jelszó</span>
+            <input id="register-password" type="password" placeholder="Adj meg egy jelszót" />
+          </label>
+        </div>
+        <button type="submit" class="cta cta-omsi">Regisztráció</button>
+      </form>
+
+      <form class="trip-log-form auth-form" id="login-form" action="#">
+        <h3>Bejelentkezés</h3>
+        <div class="trip-log-grid">
+          <label>
+            <span>Felhasználónév</span>
+            <input id="login-username" type="text" placeholder="Felhasználónév" />
+          </label>
+          <label>
+            <span>Jelszó</span>
+            <input id="login-password" type="password" placeholder="Jelszó" />
+          </label>
+        </div>
+        <div class="auth-actions">
+          <button type="submit" class="cta cta-omsi">Belépés</button>
+          <button type="button" class="search-button" id="logout-button">Kilépés</button>
+        </div>
+      </form>
+    </div>
+  </section>
+    <section class="footer-links-simple">
+    <a href="kapcsolat.html">Kapcsolat</a>
+    <a href="adatvedelem.html">Adatvédelem</a>
+    <a href="felhasznalasi-feltetelek.html">Felhasználási feltételek</a>
+    <a href="impresszum.html">Impresszum</a>
+  </section>
+
+  <footer>
+    <p>Impresszum oldal.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+

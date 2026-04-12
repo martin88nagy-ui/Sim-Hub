@@ -1,0 +1,131 @@
+﻿<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J&aacute;t&eacute;kv&aacute;laszt&oacute; 1 - Vezet&#337;s szimul&aacute;torok</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="landing-page">
+  <header class="hero hero-mixed">
+    <nav class="topbar">
+      <div class="topbar-header">
+        <a class="brand" href="index.html">Sim Hub</a>
+        <button type="button" class="search-toggle" aria-expanded="false" aria-controls="site-search" aria-label="Keres&#337; megnyit&aacute;sa">&#x2315;</button>
+        <form class="nav-search" action="#" role="search">
+          <label class="sr-only" for="site-search">Keres&eacute;s</label>
+          <input id="site-search" type="search" placeholder="Keres&eacute;s..." />
+          <button type="submit" class="search-button">Mehet</button>
+        </form>
+        <button type="button" class="search-cancel">M&eacute;gsem</button>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">F&#337;oldal</a></li>
+        <li><a class="menu-link-ets2" href="jatekvalaszto1.html">Vezet&#337;s sim.</a></li>
+        <li><a class="menu-link-pcbs2" href="jatekvalaszto2.html">Egy&eacute;b sim.</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero-content">
+      <p class="eyebrow">J&aacute;t&eacute;kv&aacute;laszt&oacute; 1</p>
+      <h1>Vezet&#337;s szimul&aacute;torok</h1>
+      <p>Itt tal&aacute;lod azokat a j&aacute;t&eacute;kokat, ahol a vezet&eacute;si &eacute;lm&eacute;ny, a j&aacute;rm&#369;kezel&eacute;s &eacute;s az &uacute;tvonalak &aacute;llnak a k&ouml;z&eacute;ppontban.</p>
+    </section>
+  </header>
+
+  <main class="landing-main">
+    <section class="panel">
+      <h2>V&aacute;lassz j&aacute;t&eacute;kot</h2>
+      <div class="games-grid">
+        <article class="game-card game-card-omsi">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/252530/header.jpg" alt="OMSI 2 hivatalos k&eacute;p" loading="lazy" />
+          <div>
+            <h3><a href="omsi.html">OMSI 2</a></h3>
+            <p>R&eacute;szletes buszszimul&aacute;tor menetrenddel, utaskezel&eacute;ssel &eacute;s v&aacute;rosi j&aacute;ratokkal.</p>
+          </div>
+        </article>
+        <article class="game-card game-card-ets2">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/227300/header.jpg" alt="ETS2 hivatalos k&eacute;p" loading="lazy" />
+          <div>
+            <h3><a href="ets2.html">Euro Truck Simulator 2</a></h3>
+            <p>Eur&oacute;pai kamionoz&aacute;s, c&eacute;g&eacute;p&iacute;t&eacute;s &eacute;s hossz&uacute; t&aacute;v&uacute; fuvarok r&eacute;szletes &uacute;th&aacute;l&oacute;zattal.</p>
+          </div>
+        </article>
+        <article class="game-card game-card-ats">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/270880/header.jpg" alt="ATS hivatalos k&eacute;p" loading="lazy" />
+          <div>
+            <h3><a href="ats.html">American Truck Simulator</a></h3>
+            <p>Amerikai aut&oacute;p&aacute;ly&aacute;k, hatalmas kamionok &eacute;s saj&aacute;t fuvaroz&oacute; v&aacute;llalkoz&aacute;s.</p>
+          </div>
+        </article>
+        <article class="game-card game-card-omsi">
+          <img src="images/let&ouml;lt&eacute;s.jfif" alt="Vol&aacute;n-Tesztp&aacute;lya bor&iacute;t&oacute;k&eacute;p" loading="lazy" />
+          <div>
+            <h3><a href="volan.html">Vol&aacute;n-Tesztp&aacute;lya</a></h3>
+            <p>Magyar buszos Roblox j&aacute;t&eacute;k menetrendes hangulattal, ritka buszokkal &eacute;s fuvaros k&ouml;z&ouml;ss&eacute;gi &eacute;lm&eacute;nnyel.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <section class="panel auth-panel">
+    <h2>Bejelentkezés / Regisztráció</h2>
+    <div class="auth-status-card" id="auth-status-card">
+      <div class="auth-avatar" id="auth-avatar">-</div>
+      <p class="auth-status" id="auth-status">Jelenleg nincs bejelentkezett profil.</p>
+    </div>
+    <div class="spec-grid">
+      <form class="trip-log-form auth-form" id="register-form" action="#">
+        <h3>Regisztráció</h3>
+        <div class="trip-log-grid">
+          <label>
+            <span>Felhasználónév</span>
+            <input id="register-username" type="text" placeholder="Pl. SimHubJatekos" />
+          </label>
+          <label>
+            <span>Jelszó</span>
+            <input id="register-password" type="password" placeholder="Adj meg egy jelszót" />
+          </label>
+        </div>
+        <button type="submit" class="cta cta-omsi">Regisztráció</button>
+      </form>
+
+      <form class="trip-log-form auth-form" id="login-form" action="#">
+        <h3>Bejelentkezés</h3>
+        <div class="trip-log-grid">
+          <label>
+            <span>Felhasználónév</span>
+            <input id="login-username" type="text" placeholder="Felhasználónév" />
+          </label>
+          <label>
+            <span>Jelszó</span>
+            <input id="login-password" type="password" placeholder="Jelszó" />
+          </label>
+        </div>
+        <div class="auth-actions">
+          <button type="submit" class="cta cta-omsi">Belépés</button>
+          <button type="button" class="search-button" id="logout-button">Kilépés</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+    <section class="footer-links-simple">
+    <a href="kapcsolat.html">Kapcsolat</a>
+    <a href="adatvedelem.html">Adatvédelem</a>
+    <a href="felhasznalasi-feltetelek.html">Felhasználási feltételek</a>
+    <a href="impresszum.html">Impresszum</a>
+  </section>
+
+  <footer>
+    <p>Vezet&#337;s szimul&aacute;torok gy&#369;jt&#337;oldala.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
