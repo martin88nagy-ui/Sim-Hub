@@ -61,6 +61,9 @@ const searchRoutes = [
   { keywords: ['adatvedelem', 'adatvédelem'], target: 'adatvedelem.html' },
   { keywords: ['felhasznalasi feltetelek', 'felhasználási feltételek'], target: 'felhasznalasi-feltetelek.html' },
   { keywords: ['impresszum'], target: 'impresszum.html' }
+  { keywords: ['fuvarnaplo','fuvar', 'napló' 'fuvarnapló'], target: 'volan.html#fuvarnaplo
+  
+  
 ];
 
 function clearSearchHighlights() {
