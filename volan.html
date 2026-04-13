@@ -115,6 +115,23 @@
       <p>A j&aacute;t&eacute;k egyik legk&uuml;l&ouml;nlegesebb j&aacute;rm&#369;ve az SSM Econell 12. Ennek megszerz&eacute;se egyedi felt&eacute;telekhez k&ouml;t&ouml;tt: a j&aacute;t&eacute;kosnak tal&aacute;lkoznia kell a Tulajdonossal, az AI tulajdonossal, valamint a Managerrel. Csak ezut&aacute;n v&aacute;lik el&eacute;rhet&#337;v&eacute;, &iacute;gy ez az egyik legritk&aacute;bb busz a j&aacute;t&eacute;kban.</p>
       <p>Fontos tudni, hogy a j&aacute;t&eacute;kban l&eacute;teznek &uacute;gynevezett admin buszok is. Ezeket a j&aacute;rm&#369;veket nem lehet megszerezni, &eacute;s nem is el&eacute;rhet&#337;k a norm&aacute;l j&aacute;t&eacute;kosok sz&aacute;m&aacute;ra. N&eacute;ha azonban lehet&#337;s&eacute;g van vezetni &#337;ket k&uuml;l&ouml;nleges esem&eacute;nyek sor&aacute;n, vagy ha egy admin enged&eacute;lyt ad r&aacute;. Ez m&eacute;g k&uuml;l&ouml;nlegesebb&eacute; teszi az &eacute;lm&eacute;nyt, hiszen ritk&aacute;n kipr&oacute;b&aacute;lhat&oacute;, egyedi j&aacute;rm&#369;vekr&#337;l van sz&oacute;.</p>
     </section>
+    <section class="panel">
+  <h2>🧭 Útvonal készítő</h2>
+
+  <input id="start" placeholder="Indulás (pl. Urom)">
+  <input id="end" placeholder="Érkezés (pl. Budapest)">
+
+  <select id="bus">
+    <option>Ikarus C80A</option>
+    <option>Volvo Alfa Regio</option>
+    <option>Econell 12</option>
+    <option>Credo Inovell</option>
+  </select>
+
+  <button onclick="createRoute()">Generálás</button>
+
+  <div id="routeOut"></div>
+</section>
 
     <section class="panel">
       <h2>&#128653; Fuvar napl&oacute; (km n&eacute;lk&uuml;l)</h2>
