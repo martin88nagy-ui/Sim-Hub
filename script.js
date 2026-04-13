@@ -399,4 +399,65 @@ if (tripList) {
 
 if (authStatus) {
   updateAuthStatus();
+}let buses = [
+  { id: 1, name: "Ikarus C80A" },
+  { id: 2, name: "Volvo Alfa Regio" },
+  { id: 3, name: "Credo Inovell" }
+ { id: 4, name: "Credo Econell 12 (sárga)" }
+ { id: 3, name: "Credo Econell 12 (fehér)" }
+ { id: 3, name: "Credo Econell 12 Next" }
+
+];
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+// 🚍 buszok kirajzolása
+function renderBuses() {
+  const busList = document.getElementById("busList");
+  busList.innerHTML = "";
+
+  buses.forEach(bus => {
+    const isFav = favorites.includes(bus.id);
+
+    busList.innerHTML += `
+      <div>
+        🚌 ${bus.name}
+        <button onclick="toggleFav(${bus.id})">
+          ${isFav ? "💔 Levétel" : "❤️ Kedvenc"}
+        </button>
+      </div>
+    `;
+  });
 }
+
+// ❤️ kedvenc hozzáadás / törlés
+function toggleFav(id) {
+  if (favorites.includes(id)) {
+    favorites = favorites.filter(f => f !== id);
+  } else {
+    favorites.push(id);
+  }
+
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  renderBuses();
+  renderFavs();
+}
+
+// ❤️ kedvencek lista
+function renderFavs() {
+  const favList = document.getElementById("favList");
+  favList.innerHTML = "";
+
+  const favBuses = buses.filter(b => favorites.includes(b.id));
+
+  favBuses.forEach(bus => {
+    favList.innerHTML += `<div>❤️ ${bus.name}</div>`;
+  });
+
+  if (favBuses.length === 0) {
+    favList.innerHTML = "<p>Nincs kedvenc busz 😢</p>";
+  }
+}
+
+renderBuses();
+renderFavs();
