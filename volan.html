@@ -135,7 +135,7 @@
 function createProfile() {
   let name = document.getElementById("name").value;
   let km = Math.floor(Math.random() * 10000);
-  let rank = km > 5000 ? "Pro sofőr" : "Kezdő sofőr";
+  let rank = getRank(km);
 
   let profileData = {
     name: name,
@@ -162,6 +162,7 @@ window.onload = showProfile;
   <button onclick="drive()">Vezetés 🚍</button>
         <script>
 function drive() {
+  function drive() {
   let data = localStorage.getItem("profile");
 
   if (data) {
@@ -170,8 +171,27 @@ function drive() {
     let addKm = Math.floor(Math.random() * 500);
     profile.km += addKm;
 
-    if (profile.km > 5000) {
-      profile.rank = "Pro sofőr";
+    profile.rank = getRank(profile.km);
+
+    localStorage.setItem("profile", JSON.stringify(profile));
+    showProfile();
+
+    alert("Mentél " + addKm + " km-t! 🚍");
+  }
+}
+
+  if (data) {
+    let profile = JSON.parse(data);
+
+    let addKm = Math.floor(Math.random() * 500);
+    profile.km += addKm;
+
+  function getRank(km) {
+  if (km < 1000) return "Kezdő sofőr";
+  if (km < 3000) return "Tapasztalt sofőr";
+  if (km < 7000) return "Haladó sofőr";
+  return "Pro sofőr";
+}
     }
 
     localStorage.setItem("profile", JSON.stringify(profile));
