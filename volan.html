@@ -159,8 +159,31 @@ function showProfile() {
 
 window.onload = showProfile;
 </script>
+  <button onclick="drive()">Vezetés 🚍</button>
+        <script>
+function drive() {
+  let data = localStorage.getItem("profile");
+
+  if (data) {
+    let profile = JSON.parse(data);
+
+    let addKm = Math.floor(Math.random() * 500);
+    profile.km += addKm;
+
+    if (profile.km > 5000) {
+      profile.rank = "Pro sofőr";
+    }
+
+    localStorage.setItem("profile", JSON.stringify(profile));
+    showProfile();
+  }
+}
+        </script>
+        
 
     </section> 
+
+    
 
     <section class="panel">
       <h2>&#128653; Fuvar napl&oacute; (km n&eacute;lk&uuml;l)</h2>
