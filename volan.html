@@ -130,15 +130,34 @@
 
 <p id="profile"></p>
 
+
 <script>
 function createProfile() {
   let name = document.getElementById("name").value;
   let km = Math.floor(Math.random() * 10000);
   let rank = km > 5000 ? "Pro sofőr" : "Kezdő sofőr";
 
-  document.getElementById("profile").innerText =
-    name + " | " + rank + " | " + km + " km vezetve";
+  let profileData = {
+    name: name,
+    km: km,
+    rank: rank
+  };
+
+  localStorage.setItem("profile", JSON.stringify(profileData));
+  showProfile();
 }
+
+function showProfile() {
+  let data = localStorage.getItem("profile");
+
+  if (data) {
+    let profile = JSON.parse(data);
+    document.getElementById("profile").innerText =
+      profile.name + " | " + profile.rank + " | " + profile.km + " km vezetve";
+  }
+}
+
+window.onload = showProfile;
 </script>
 
     </section> 
