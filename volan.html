@@ -181,6 +181,37 @@ function drive() {
 window.onload = showProfile;
 </script>    
     </section> 
+    <section class="panel">
+      <h2>Top sofőrök</h2>
+<ul id="toplist"></ul>
+
+      <script>
+      function updateToplist() {
+  let fakePlayers = [
+    { name: "Jani", km: 8000 },
+    { name: "Peti", km: 6000 },
+    { name: "Laci", km: 4000 }
+  ];
+
+  let data = localStorage.getItem("profile");
+  if (data) {
+    let profile = JSON.parse(data);
+    fakePlayers.push({ name: profile.name, km: profile.km });
+  }
+
+  fakePlayers.sort((a, b) => b.km - a.km);
+
+  let list = document.getElementById("toplist");
+  list.innerHTML = "";
+
+  fakePlayers.slice(0, 5).forEach(player => {
+    let li = document.createElement("li");
+    li.innerText = player.name + " - " + player.km + " km";
+    list.appendChild(li);
+  });
+}
+      </script>
+    </section>
 
     
 
