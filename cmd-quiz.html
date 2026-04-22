@@ -514,6 +514,30 @@
   </main>
 
   <script>
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+  limit
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBP39ndlacf8B2PeqDI-xNrOQEFWJRycBI",
+  authDomain: "leardbord-55d8e.firebaseapp.com",
+  projectId: "leardbord-55d8e",
+  storageBucket: "leardbord-55d8e.firebasestorage.app",
+  messagingSenderId: "755628346020",
+  appId: "1:755628346020:web:00d121f294a4db4769f431"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const leaderboardRef = collection(db, "leaderboard");
+    
     const QUIZ_NAME_KEY = "simhub_cmd_quiz_name";
     const QUIZ_RESULT_KEY = "simhub_cmd_quiz_results";
     const QUIZ_DAILY_KEY = "simhub_cmd_quiz_daily";
@@ -638,19 +662,12 @@
     function setDailyRuns(data) {
       window.localStorage.setItem(QUIZ_DAILY_KEY, JSON.stringify(data));
     }
-
-    function getLeaderboard() {
-      try {
-        return JSON.parse(window.localStorage.getItem(QUIZ_RESULT_KEY)) || [];
-      } catch {
-        return [];
-      }
-    }
-
-    function setLeaderboard(items) {
-      window.localStorage.setItem(QUIZ_RESULT_KEY, JSON.stringify(items));
-    }
-
+    
+async function setLeaderboard(entry) {
+  await addDoc(leaderboardRef, entry);
+  async function saveResult(silent = false, forcedPayload = null) {
+}
+    
     function calculateLevel(xp) {
       return Math.floor(xp / 120) + 1;
     }
@@ -776,10 +793,37 @@
         currentQuestionIndex === questionSet.length - 1 ? "Eredmény megtekintése" : "Következő kérdés";
     }
 
-    function renderLeaderboard() {
-      const entries = getLeaderboard()
-        .sort((left, right) => right.xp - left.xp || right.score - left.score)
-        .slice(0, 10);
+    async function renderLeaderboard() {
+  const q = query(leaderboardRef, orderBy("xp", "desc"), limit(10));
+  const snapshot = await getDocs(q);
+
+  const entries = [];
+
+  snapshot.forEach((doc) => {
+    entries.push(doc.data());
+  });
+
+  if (!entries.length) {
+    leaderboardList.innerHTML = '<p class="empty-state">Még nincs mentett eredmény.</p>';
+    return;
+  }
+
+  leaderboardList.innerHTML = entries
+    .map((entry, index) => `
+      <div class="leaderboard-item">
+        <div class="leaderboard-rank">${index + 1}</div>
+        <div>
+          <strong>${entry.name}</strong>
+          <span>${entry.dateLabel} • ${entry.modeLabel}</span>
+        </div>
+        <div>
+          <strong>${entry.xp} XP</strong>
+          <span>${entry.score}/${entry.totalQuestions}</span>
+        </div>
+      </div>
+    `)
+    .join("");
+}
 
       if (!entries.length) {
         leaderboardList.innerHTML = '<p class="empty-state">Még nincs mentett eredmény.</p>';
