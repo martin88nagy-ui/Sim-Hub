@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regisztr&aacute;ci&oacute;</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="landing-page">
+  <header class="hero hero-mixed">
+    <nav class="topbar">
+      <div class="topbar-header">
+        <a class="brand" href="index.html">Sim Hub</a>
+        <div class="topbar-actions">
+          <a class="topbar-action" href="bejelentkezes.html">Bejelentkez&eacute;s</a>
+          <a class="topbar-action" href="regisztracio.html">Regisztr&aacute;ci&oacute;</a>
+        </div>
+        <button type="button" class="search-toggle" aria-expanded="false" aria-controls="site-search" aria-label="Keres&#337; megnyit&aacute;sa">⌕</button>
+        <form class="nav-search" action="#" role="search">
+          <label class="sr-only" for="site-search">Keres&eacute;s</label>
+          <input id="site-search" type="search" placeholder="Keres&eacute;s..." />
+          <button type="submit" class="search-button">Mehet</button>
+        </form>
+        <button type="button" class="search-cancel">M&eacute;gsem</button>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">F&#337;oldal</a></li>
+        <li><a class="menu-link-ets2" href="jatekvalaszto1.html">Vezet&#337;s sim.</a></li>
+        <li><a class="menu-link-pcbs2" href="jatekvalaszto2.html">Egy&eacute;b sim.</a></li>
+      </ul>
+    </nav>
+    <section class="hero-content">
+      <p class="eyebrow">Fi&oacute;k</p>
+      <h1>Regisztr&aacute;ci&oacute;</h1>
+      <p>Itt hozhatsz l&eacute;tre &uacute;j helyi profilt a b&ouml;ng&eacute;sz&#337;n bel&uuml;li ment&eacute;sekhez &eacute;s statisztik&aacute;khoz.</p>
+    </section>
+  </header>
+
+  <main>
+    <section class="panel auth-page-panel">
+      <div class="auth-status-card" id="auth-status-card">
+        <div class="auth-avatar" id="auth-avatar">-</div>
+        <p class="auth-status" id="auth-status">Jelenleg nincs bejelentkezett profil.</p>
+      </div>
+
+      <form class="trip-log-form auth-form auth-page-form" id="register-page-form" action="#">
+        <h2>&Uacute;j profil l&eacute;trehoz&aacute;sa</h2>
+        <div class="trip-log-grid">
+          <label>
+            <span>Felhaszn&aacute;l&oacute;n&eacute;v</span>
+            <input id="register-username" type="text" placeholder="Pl. SimHubJátékos" />
+          </label>
+          <label>
+            <span>Jelsz&oacute;</span>
+            <input id="register-password" type="password" placeholder="Adj meg egy jelsz&oacute;t" />
+          </label>
+        </div>
+        <div class="auth-actions">
+          <button type="submit" class="cta cta-omsi">Regisztr&aacute;ci&oacute;</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <section class="footer-links-simple">
+    <a href="kapcsolat.html">Kapcsolat</a>
+    <a href="adatvedelem.html">Adatv&eacute;delem</a>
+    <a href="felhasznalasi-feltetelek.html">Felhaszn&aacute;l&aacute;si felt&eacute;telek</a>
+    <a href="impresszum.html">Impresszum</a>
+  </section>
+
+  <footer>
+    <p>Regisztr&aacute;ci&oacute; oldal.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
